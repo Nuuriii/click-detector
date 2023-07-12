@@ -3,23 +3,47 @@ import { Buttons } from "../Tools/Buttons";
 import "./Click.css";
 
 export const Click = () => {
+   // state untuk menyimpan nilai click
    const [value, setValue] = useState(0);
 
-   useEffect(() => {
+   // fungsi untuk menampilkan element rahasia
+   const showElement = (element: HTMLElement) => {
+      value % 10 === 0 && value > 0
+         ? element.classList.add("show")
+         : element.classList.add("hidden");
+   };
+
+   // fungsi untuk menyembunyikan element rahasia
+   const hiddenElement = (element: HTMLElement) => {
+      value % 10 === 0 && value > 0
+         ? element.classList.remove("hidden")
+         : element.classList.remove("show");
+   };
+
+   // fungsi untuk mengecek nilai click dan menampilkannya ke judul web
+   const checkValue = () => {
       value > 0
          ? (document.title = `Sudah Click sebanyak ${value}`)
          : (document.title = "Halo . . .");
+   };
 
-      const secret: any = document.querySelector(".secret");
-      value === 10 || value === 20
-         ? secret.classList.add("see")
-         : secret.classList.add("hidden");
+   // fungsi untuk memilih tag HTML yang terdapat class dengan nama secret
+   const secretElement = () => {
+      const secret: HTMLElement = document.querySelector(".secret")!;
+      return secret;
+   };
 
-      value !== 10 && value !== 20
-         ? secret.classList.remove("see")
-         : secret.classList.remove("hidden");
+   // gunakan useEffect untuk menjalankan fungsi
+   useEffect(() => {
+      checkValue();
 
-      console.log(secret);
+      //jalankan fungsi untuk menampilkan dan menyembunyikan element
+      //isi parameter dengan fungsi yang memilih element yang classnya secret
+      showElement(secretElement());
+      hiddenElement(secretElement());
+
+      //console.log buat mengecek apakah function untuk menampilkan dan menyembunyikan element berfungsi sesuai yang kita mau
+      console.log(secretElement());
    });
 
    return (
@@ -29,14 +53,15 @@ export const Click = () => {
          <p>
             Kamu sudah mengeklik sebanyak: <span>{value}</span>
          </p>
+
          {/* Element rahasia yang akan tampil ketika user telah mencapai nilai tertentu */}
-         <p className='secret '>
-            {/* Jika nilai dari state sudah 10 dan 20 maka akan tampil text yang sudah diatur akan tampil seperti apa */}
-            {value === 10 || value === 20
-               ? `Selamat kamu Sudah mengeklik sebanyak `
-               : ""}
-            <span>{value === 10 || value === 20 ? `${value}` : ""}</span>
+         <p className='secret hidden'>
+            {/* Jika nilai dari state sudah kelipatan 10 maka akan tampil text yang sudah diatur akan tampil tulisan apa */}
+            {value % 10 === 0 ? `Selamat kamu Sudah mengeklik sebanyak ` : ""}
+            <span>{value % 10 === 0 ? ` ${value} ` : ""}</span>
+            kali
          </p>
+
          {/* import button dari komponent Buttons, kemudian isi dengan props yang telah dibuat di Componennya */}
          <Buttons
             className='btn'
