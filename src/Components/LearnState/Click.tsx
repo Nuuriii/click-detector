@@ -13,7 +13,9 @@ export const Click = () => {
       <div className='container'>
          <h1>Penghitung Click</h1>
          <p>Silahkan Di-Click</p>
-         <p>Kamu sudah mengeklik sebanyak: {value}</p>
+         <p>
+            Kamu sudah mengeklik sebanyak: <span>{value}</span>
+         </p>
          <Buttons
             className='btn'
             Click={() => setValue(value + 1)}

@@ -1,8 +1,20 @@
 .container {
    background-color: blueviolet;
    height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-family: "Courier New", Courier, monospace;
+   color: white;
 }
 
 .container > h1 {
    margin: 0;
+}
+
+.container > p > span {
+   font-weight: bold;
+   color: yellow;
+   text-decoration: underline;
 }
