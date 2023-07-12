@@ -23,7 +23,7 @@ export const Click = () => {
    // fungsi untuk mengecek nilai click dan menampilkannya ke judul web
    const checkValue = () => {
       value > 0
-         ? (document.title = `Sudah Click sebanyak ${value}`)
+         ? (document.title = `${value} Click`)
          : (document.title = "Halo . . .");
    };
 
