@@ -35,7 +35,7 @@ export const Click = () => {
             {value === 10 || value === 20
                ? `Selamat kamu Sudah mengeklik sebanyak `
                : ""}
-            <span>{value === 10 || value === 20 ? `${value}` : ""}</span>
+            <span>{value === 10 || value === 20 ? `${value}` : ""}</span> kali
          </p>
          {/* import button dari komponent Buttons, kemudian isi dengan props yang telah dibuat di Componennya */}
          <Buttons
