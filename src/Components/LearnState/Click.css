@@ -15,14 +15,20 @@
 
 .container > p > span {
    font-weight: bold;
-   color: yellow;
+   color: greenyellow;
    text-decoration: underline;
 }
 
-.secret {
+.container .secret {
    padding: 5px 10px;
    color: black;
    background-color: greenyellow;
+}
+
+.container .secret > span {
+   color: red;
+   font-weight: bolder;
+   text-decoration: line-through black;
 }
 
 .hidden {
