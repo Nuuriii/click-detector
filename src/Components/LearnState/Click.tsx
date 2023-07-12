@@ -29,14 +29,17 @@ export const Click = () => {
          <p>
             Kamu sudah mengeklik sebanyak: <span>{value}</span>
          </p>
+         {/* Element rahasia yang akan tampil ketika user telah mencapai nilai tertentu */}
          <p className='secret '>
             {value === 10 || value === 20
                ? `Selamat kamu Sudah mengeklik sebanyak `
                : ""}
             <span>{value === 10 || value === 20 ? `${value}` : ""}</span>
          </p>
+         {/* import button dari komponent Buttons, kemudian isi dengan props yang telah dibuat di Componennya */}
          <Buttons
             className='btn'
+            // Setiap kali tombol Click saya diklik maka nilainya akan bertanbah satu
             Click={() => setValue(value + 1)}
             text='Click Saya'
          />
