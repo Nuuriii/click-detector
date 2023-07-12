@@ -31,6 +31,7 @@ export const Click = () => {
          </p>
          {/* Element rahasia yang akan tampil ketika user telah mencapai nilai tertentu */}
          <p className='secret '>
+            {/* Jika nilai dari state sudah 10 dan 20 maka akan tampil text yang sudah diatur akan tampil seperti apa */}
             {value === 10 || value === 20
                ? `Selamat kamu Sudah mengeklik sebanyak `
                : ""}
