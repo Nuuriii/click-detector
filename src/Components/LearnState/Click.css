@@ -18,3 +18,17 @@
    color: yellow;
    text-decoration: underline;
 }
+
+.secret {
+   padding: 5px 10px;
+   color: black;
+   background-color: greenyellow;
+}
+
+.hidden {
+   display: none;
+}
+
+.see {
+   display: block;
+}
