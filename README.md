@@ -1,6 +1,6 @@
 # Click Detector
 
-Project ini saya gunakan untuk membuat pemahaman saya mengenai hooks di react terutama useState dan useEffect
+Project ini saya gunakan untuk memperdalam pemahaman saya mengenai hooks di react terutama useState dan useEffect
 
 ## Instalasi
 
