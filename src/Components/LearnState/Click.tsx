@@ -17,7 +17,7 @@ export const Click = () => {
 
       value !== 10 && value !== 20
          ? secret.classList.remove("see")
-         : secret.classList.add("hidden");
+         : secret.classList.remove("hidden");
 
       console.log(secret);
    });
